@@ -129,7 +129,7 @@ For detailed customization instructions, see the [Modification Guide](./docs/mod
 
 ## Credits
 
-This application was architected and developed by <a href="https://www.linkedin.com/in/loveneet-singh-6bb2851ba/" target="_blank">Loveneet Singh</a>, <a href="http://www.linkedin.com/in/pshristi" target="_blank">Shristi Pathak</a>, and <a href="https://www.linkedin.com/in/apoorv16/" target="_blank">Apoorv Singh</a>, with solutions architect <a href="https://www.linkedin.com/in/arunarunachalam/" target="_blank">Arun Arunachalam</a>, program manager <a href="https://www.linkedin.com/in/thomas-orr/" target="_blank">Thomas Orr</a>  and product manager <a href="https://www.linkedin.com/in/rachelhayden/" target="_blank">Rachel Hayden</a>. Thanks to the ASU Cloud Innovation Centre Technical and Project Management teams for their guidance and support.
+This application was architected and developed by <a href="https://www.linkedin.com/in/loveneet-singh-6bb2851ba/" target="_blank">Loveneet Singh</a>, <a href="http://www.linkedin.com/in/pshristi" target="_blank"> Shristi Pathak</a>, and <a href="https://www.linkedin.com/in/apoorv16/" target="_blank">Apoorv Singh</a>, with solutions architect <a href="https://www.linkedin.com/in/arunarunachalam/" target="_blank">Arun Arunachalam</a>, program manager <a href="https://www.linkedin.com/in/thomas-orr/" target="_blank">Thomas Orr</a>  and product manager <a href="https://www.linkedin.com/in/rachelhayden/" target="_blank">Rachel Hayden</a>. Thanks to the ASU Cloud Innovation Centre Technical and Project Management teams for their guidance and support.
 
 ---
 
