@@ -1,0 +1,10 @@
+{
+    "name": "cintana-agent-proxy",
+    "version": "1.0.0",
+    "description": "Lambda proxy that streams Bedrock AgentCore responses",
+    "main": "index.js",
+    "private": true,
+    "dependencies": {
+        "@aws-sdk/client-bedrock-agentcore": "^3.665.0"
+    }
+}

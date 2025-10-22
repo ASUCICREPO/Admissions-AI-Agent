@@ -1,0 +1,5 @@
+bedrock-agentcore==0.1.5
+strands-agents-tools==0.2.9
+strands-agents==1.10.0
+simple-salesforce==1.12.9
+python-dotenv>=1.0.0
