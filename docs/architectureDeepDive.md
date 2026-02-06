@@ -2,7 +2,7 @@
 
 ## Architecture Diagram
 
-![Architecture Diagram](./media/AI-Agent-admissions-architecture-v4.png)
+![Architecture Diagram](./media/AI-Agent-admissions-architecture-v5.png)
 
 ---
 

@@ -25,7 +25,7 @@ An AI agent for admissions that combines **AWS Bedrock AgentCore** with a modern
 
 The following architecture diagram illustrates the various services and components that make up the solution. The agent uses custom tools to retrieve university information, manage conversations, update Salesforce CRM, and trigger WhatsApp follow-ups. For an in-depth explanation of the backend, please look at the [Architecture Deep Dive](./docs/architectureDeepDive.md).
 
-![Architecture Diagram](./docs/media/AI-Agent-admissions-architecture-v4.png)
+![Architecture Diagram](./docs/media/AI-Agent-admissions-architecture-v5.png)
 
 
 
