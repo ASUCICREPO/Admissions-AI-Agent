@@ -15,7 +15,7 @@ from strands.models import BedrockModel
 load_dotenv()
 
 # Import custom tools
-from tools import retrieve_university_info, complete_advisor_handoff
+from tools import retrieve_university_info, complete_advisor_handoff, translate_text
 from tools.advisor_handoff_tool import set_context
 from tools.session_utils import sanitize_phone_for_actor_id, fetch_conversation_history
 
@@ -144,6 +144,31 @@ You: "Perfect! I'll arrange for an enrollment advisor to reach out to you within
 - whatsapp_message: "Hi! Thanks for your interest in our MBA program. Our enrollment advisor will reach out within the next 2 hours to discuss financial aid options. Looking forward to connecting!"
 - programs_discussed: "MBA"
 - concerns: "Financial aid options"
+
+### 3. Translation Tool: `translate_text`
+
+**Use when:** You detect that the user's input is in a non-English language (e.g., Spanish, French, Hindi, etc.)
+
+**Workflow:**
+1. **Translate input to English**: Call `translate_text(text=user_input, target_language='en', source_language='auto')`
+   - This will auto-detect the source language and translate to English
+   - Remember the detected source language code (e.g., 'es' for Spanish) from the response
+2. **Process normally**: Process the English text using your normal tools and logic (knowledge base, conversation, etc.)
+3. **Generate English response**: Generate your response in English as you normally would
+4. **Translate response back**: Call `translate_text(text=your_english_response, target_language=detected_source_language, source_language='en')`
+   - Use the source language code you detected in step 1 as the target_language
+5. **Send translated response**: Send the translated response (in the user's original language) to the user
+
+**Important**: Always translate both ways - input to English for processing, then output back to the user's language.
+
+**Example:**
+User: "¿Qué programas ofrecen?" (Spanish)
+You: [Call translate_text(text="¿Qué programas ofrecen?", target_language='en', source_language='auto')]
+     → Result: "What programs do you offer?" (detected source: 'es')
+[Process normally, retrieve university info, generate English response: "We offer undergraduate and graduate programs in various fields..."]
+[Call translate_text(text="We offer undergraduate...", target_language='es', source_language='en')]
+     → Result: "Ofrecemos programas de pregrado y posgrado en diversas áreas..."
+You: "Ofrecemos programas de pregrado y posgrado en diversas áreas..."
 
 ## Key Success Metrics
 
@@ -316,7 +341,7 @@ model = BedrockModel(
 
 agent = Agent(
     model=model,
-    tools=[retrieve_university_info, complete_advisor_handoff],
+    tools=[retrieve_university_info, complete_advisor_handoff, translate_text],
     system_prompt=system_prompt,
     trace_attributes={
         "user.id": "nemo-assistant",
@@ -397,8 +422,8 @@ async def strands_agent_bedrock(payload):
         # Small delay for memory consistency
         await asyncio.sleep(0.1)
 
-        # Prepare agent tools - translation support removed
-        agent_tools = [retrieve_university_info, complete_advisor_handoff]
+        # Prepare agent tools
+        agent_tools = [retrieve_university_info, complete_advisor_handoff, translate_text]
 
         # 4. Build enhanced prompt with conversation context (no session context needed - tools get it automatically)
         enhanced_prompt = prompt

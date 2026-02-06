@@ -37,7 +37,7 @@
 ## Nemo Agent & Tools
 
 - **Framework:** Strands Agent orchestrating `Anthropic Claude Sonnet 4.5` via Bedrock.
-- **Tools:** `retrieve_university_info`, `complete_advisor_handoff`, Salesforce utilities, Twilio integration, and session helpers.
+- **Tools:** `retrieve_university_info`, `complete_advisor_handoff`, `translate_text`, Salesforce utilities, Twilio integration, and session helpers.
 
 ## Deployment & Automation
 
@@ -53,8 +53,3 @@
 
 - **Salesforce:** Lambda environment variables supply credentials; helper modules perform lead search, creation, status updates, and task logging.
 - **Twilio WhatsApp:** Packaged via Lambda layer; credentials reside in environment variables; delivery status is persisted to DynamoDB.
-
-
-## Future Enhancements
-
-- Translation tool for the agent to support 70+ languages is **coming soon** using **AWS Translate**.

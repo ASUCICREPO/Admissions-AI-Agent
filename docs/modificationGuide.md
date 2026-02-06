@@ -143,6 +143,23 @@ We are using AWS Strands framework for the agent core. For more information, ple
 Custom tools allow the agent to perform specific actions like querying databases, calling APIs, or triggering workflows.
 The agent core is designed to be highly extensible and customizable. You can easily add new tools to the agent core by adding a new tool to the `tools` directory and adding the tool to the `nemo_agent.py` file.
 
+### Translation Tool Example
+
+The `translate_text` tool demonstrates how to integrate AWS services into agent tools:
+
+**Location:** `Backend/admissions-ai-agent/AgentCore/tools/translate_tool.py`
+
+**Key Features:**
+- Uses AWS Translate for 70+ language support
+- Auto-detects source language when not specified
+- Handles bidirectional translation (user input to English, response back to user's language)
+
+**Usage in System Prompt:**
+The agent automatically detects non-English input and:
+1. Translates user input to English for processing
+2. Processes the query using knowledge base and conversation logic
+3. Translates the response back to the user's original language
+
 
 ## Change Conversation Flow
 You can also easily change the behavior of the agent by changing the system prompt in the `nemo_agent.py` file. The system prompt is the instructions that the agent will follow to conduct the conversation. You can also change the conversation flow by changing the conversation flow in the `nemo_agent.py` file.

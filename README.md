@@ -37,7 +37,7 @@ The following architecture diagram illustrates the various services and componen
 - **Knowledge Base Access**: Instant answers to program, admission, and university questions
 - **CRM Integration**: Automatic lead creation and updates in Salesforce for admissions staff
 - **WhatsApp Follow-Up**: Automated follow-up messages via WhatsApp for convenience
-- **Multi-Language Support (coming soon)**: Infrastructure will support multiple languages using AWS Translate (70+ languages) for translation.
+- **Multi-Language Support**: Supports 70+ languages using AWS Translate for seamless multilingual conversations
 
 
 ## Directory Structure
@@ -65,6 +65,7 @@ AI-Powered-Admissions-Agent/
 │       │   │   ├── salesforce_tools.py    # CRM integration
 │       │   │   ├── whatsapp_twilio_tool.py # WhatsApp messaging
 │       │   │   ├── advisor_handoff_tool.py # Advisor handoff workflow
+│       │   │   ├── translate_tool.py      # Multi-language translation
 │       │   │   └── session_utils.py       # Session management
 │       │   └── requirements.txt           # Python dependencies
 │       │   
